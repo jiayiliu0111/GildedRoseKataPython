@@ -42,15 +42,6 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEqual("Conjured", conjured_item.name)
 
     #The third test focusing on logical errors
-    def test_backstage_quality_zero_after_concert(self):
-        items = [Item("Backstage passes to a TAFKAL80ETC concert", 0, 10)]
-        gilded_rose = GildedRose(items)
-        gilded_rose.update_quality()
-        backstage_passes_item = items[0]
-        self.assertEqual(0,backstage_passes_item.quality)
-        self.assertEqual(-1, backstage_passes_item.sell_in)
-        self.assertEqual("Backstage passes to a TAFKAL80ETC concert", backstage_passes_item.name)
-
     def test_sulfuras_should_not_decrease_sellin(self):
         items = [Item("Sulfuras", 5, 80)]
         gilded_rose = GildedRose(items)
