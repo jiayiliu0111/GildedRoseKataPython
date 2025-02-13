@@ -12,8 +12,9 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose.update_quality()
         sulfuras_item = items[0]
         self.assertEqual(80, sulfuras_item.quality)
-        self.assertEqual(4, sulfuras_item.sell_in)
+        self.assertEqual(5, sulfuras_item.sell_in)
         self.assertEqual("Sulfuras", sulfuras_item.name)
+
     # example of test that checks for syntax errors
     def test_gilded_rose_list_all_items(self):
         items = [Item("Sulfuras", 5, 80)]
@@ -41,13 +42,13 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEqual(4, conjured_item.sell_in)
         self.assertEqual("Conjured", conjured_item.name)
 
-    #The third test focusing on logical errors
+    #The third test focusing on logical errors 
     def test_sulfuras_should_not_decrease_sellin(self):
         items = [Item("Sulfuras", 5, 80)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         sulfuras_item = items[0]
-        self.assertEqual(79, sulfuras_item.quality)
+        self.assertEqual(80, sulfuras_item.quality)
         self.assertEqual(5, sulfuras_item.sell_in)
         self.assertEqual("Sulfuras", sulfuras_item.name)
 
